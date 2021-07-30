@@ -8,6 +8,7 @@ docs/source/tincan.rst
 docs/source/tincan.conversions.rst
 docs/source/tincan.documents.rst
 test/resources/lrs_properties.py
+examples/resources/custom_example.py
 
 # bad
 .DS_Store

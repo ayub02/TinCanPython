@@ -319,7 +319,6 @@ class RemoteLRS(Base):
         params = {}
 
         param_keys = [
-            "statementId",
             "registration",
             "since",
             "until",
@@ -349,10 +348,7 @@ class RemoteLRS(Base):
         lrs_response = self._send_request(request)
 
         if lrs_response.success:
-            try:
-                lrs_response.content = StatementsResult.from_json(lrs_response.data)
-            except:
-                pass
+            lrs_response.content = StatementsResult.from_json(lrs_response.data)
 
         return lrs_response
 

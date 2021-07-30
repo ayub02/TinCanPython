@@ -29,7 +29,7 @@ print("...done")
 # construct the actor of the statement
 print("constructing the Actor...")
 actor = Agent(
-    name='UserMan',
+    name='AngryMan',
     mbox='mailto:tincanpython@tincanapi.com',
 )
 print("...done")
@@ -78,11 +78,14 @@ print("...done")
 # save our statement to the remote_lrs and store the response in 'response'
 print("saving the Statement...")
 response = lrs.save_statement(statement)
+print(response.data)
+print(response.response.code)
 
 if not response:
     raise ValueError("statement failed to save")
 print("...done")
 
+'''
 # retrieve our statement from the remote_lrs using the id returned in the response
 print("Now, retrieving statement...")
 response = lrs.retrieve_statement(response.content.id)
@@ -140,3 +143,4 @@ response = lrs.save_state(state_document)
 if not response.success:
     raise ValueError("could not save state document")
 print("...done")
+'''
